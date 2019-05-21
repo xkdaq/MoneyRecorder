@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Money Recorder</string>
+    <string name="add">Add Account</string>
+    <string name="look">View Accounts</string>
+    <string name="hint_value">0.00</string>
+    <string name="title">Option</string>
+    <string name="select">Select</string>
+    <string name="income">income</string>
+    <string name="pay">expenditure</string>
+    <string name="text_value">Amount</string>
+    <string name="text_matter">Matter</string>
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="input_matter">Where is the money spent?</string>
+    <string name="account_today_sum">Today consumption:</string>
+    <string name="account_today_max">Toady max consumption:</string>
+    <string name="account_this_month_sum">This month consumption:</string>
+    <string name="account_this_month_max">This month max consumption:</string>
+    <string name="account_today_income_sum">Total income today:</string>
+    <string name="account_this_month_income_sum">Total income this month:</string>
+</resources>
