@@ -9,7 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.callmebear.financerecorder.vest.MainVestActivity;
+
 public class MainActivity extends Activity {
+
+    private Button buttonWeb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,21 +39,30 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-        lv=(ListView)findViewById(R.id.list);
-        recordersDB=new RecordersDB(this);
-        dbReader=recordersDB.getReadableDatabase();
+
+        buttonWeb = (Button) findViewById(R.id.buttonweb);
+        buttonWeb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MainVestActivity.class));
+            }
+        });
+
+        lv = (ListView) findViewById(R.id.list);
+        recordersDB = new RecordersDB(this);
+        dbReader = recordersDB.getReadableDatabase();
+
+
     }
 
-    public void showDB()
-    {
-        cursor=dbReader.query(RecordersDB.TABLE_NAME,null,null,null,null,null,null);
-        adapter=new RecordersAdapter(this,cursor);
+    public void showDB() {
+        cursor = dbReader.query(RecordersDB.TABLE_NAME, null, null, null, null, null, null);
+        adapter = new RecordersAdapter(this, cursor);
         lv.setAdapter(adapter);
     }
 
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
         showDB();
     }

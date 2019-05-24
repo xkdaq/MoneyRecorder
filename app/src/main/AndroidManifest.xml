@@ -2,8 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.callmebear.financerecorder">
 
+    <!--wifi-->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--网络-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--相机-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--手机-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--位置-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--联系人-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--日历-->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <!--存储-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--联系人-->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!--蓝牙-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
 
     <application
         android:allowBackup="true"

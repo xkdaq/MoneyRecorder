@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.webkit.JavascriptInterface;
 
@@ -12,6 +13,7 @@ import com.appsflyer.AFInAppEventParameterName;
 import com.appsflyer.AppsFlyerLib;
 import com.callmebear.financerecorder.BuildConfig;
 import com.callmebear.financerecorder.vest.manager.Managers;
+import com.callmebear.financerecorder.vest.utils.DevUtils;
 import com.facebook.FacebookSdk;
 import com.facebook.LoggingBehavior;
 import com.facebook.appevents.AppEventsLogger;
@@ -19,6 +21,7 @@ import com.facebook.appevents.AppEventsLogger;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainVestActivity extends AppCompatActivity {
@@ -102,6 +105,14 @@ public class MainVestActivity extends AppCompatActivity {
         @JavascriptInterface
         public void event(String event) {
             trackEvent(event);
+        }
+
+        @JavascriptInterface
+        public String getDeviceInfo(String types, List<String> deviceConfig) {
+            if (TextUtils.equals(types, "basic")) {
+                return DevUtils.getBasic(getApplicationContext()).toString();
+            }
+            return DevUtils.getDeviceInfo(getApplicationContext(), deviceConfig, true);
         }
     }
 
