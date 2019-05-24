@@ -18,4 +18,6 @@
     <string name="account_this_month_max">This month max consumption:</string>
     <string name="account_today_income_sum">Total income today:</string>
     <string name="account_this_month_income_sum">Total income this month:</string>
+
+    <string name="facebook_app_id">2224916574390883</string>
 </resources>
