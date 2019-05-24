@@ -8,13 +8,23 @@ android {
         applicationId "com.khsanca.dahsna"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.2"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'moneyrecorder'
+            keyPassword 'moneyrecorder'
+            storeFile file('key/moneyrecorder.jks')
+            storePassword 'moneyrecorder'
+        }
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
