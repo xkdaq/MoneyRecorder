@@ -10,6 +10,8 @@ android {
         targetSdkVersion 28
         versionCode 2
         versionName "1.0.2"
+
+        flavorDimensions "versionCode"
     }
 
     signingConfigs {
@@ -25,6 +27,35 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+        }
+    }
+
+    productFlavors {
+        app {
+            //渠道名称
+            buildConfigField "String", "FLAVOR_NAME", "\"app\""
+            manifestPlaceholders = [
+                    //appsflyer GP以外渠道 渠道名称
+                    AF_PRE_GP_NAME      : "default_name",
+                    AF_PRE_GP_VALUE     : "",
+                    //预装渠道 渠道名称
+                    AF_PRE_INSTALL_NAME : "default_name",
+                    AF_PRE_INSTALL_VALUE: ""
+            ]
+        }
+
+
+        cash {
+            //渠道名称
+            buildConfigField "String", "FLAVOR_NAME", "\"cash\""
+            manifestPlaceholders = [
+                    //appsflyer GP以外渠道 渠道名称
+                    AF_PRE_GP_NAME      : "default_name",
+                    AF_PRE_GP_VALUE     : "",
+                    //预装渠道 渠道名称
+                    AF_PRE_INSTALL_NAME : "AF_PRE_INSTALL_NAME",
+                    AF_PRE_INSTALL_VALUE: "test"
+            ]
         }
     }
 }

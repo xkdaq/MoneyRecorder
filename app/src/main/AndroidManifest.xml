@@ -27,11 +27,23 @@
 
 
     <application
+        android:name=".vest.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--appsflyer GP以外渠道 渠道号-->
+        <meta-data
+            android:name="${AF_PRE_GP_NAME}"
+            android:value="${AF_PRE_GP_VALUE}" />
+        <!--appsflyer 预装渠道 渠道号-->
+        <meta-data
+            android:name="${AF_PRE_INSTALL_NAME}"
+            android:value="${AF_PRE_INSTALL_VALUE}" />
+
+
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
